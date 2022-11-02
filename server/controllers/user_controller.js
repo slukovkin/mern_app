@@ -34,10 +34,6 @@ export const getAllUser = async (req, res) => {
   res.json(user)
 }
 
-export const updateUser = async (req, res) => {
-  
-}
-
 export const deleteUser = async (req, res) => {
   const email = req.body.email;
   const user = await User.findOne({ email });
