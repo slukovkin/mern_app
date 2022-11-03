@@ -8,7 +8,7 @@ export const register = async (req, res) => {
   const user = await User.findOne({ email });
 
   if (user) {
-    res.json({
+    return res.json({
       message: "Пользователь уже существует",
     });
   }
