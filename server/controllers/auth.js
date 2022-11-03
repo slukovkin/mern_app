@@ -57,3 +57,31 @@ export const login = async (req, res) => {
     });
   }
 };
+
+export const getme = async (req, res) => {
+  try {
+    const user = await User.findById(req.userId);
+    if (!user) {
+      res.json({
+        message: "Доступ закрыт",
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        id: user._id,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "30d" }
+    );
+
+    res.json({
+      user,
+      token,
+    });
+  } catch (error) {
+    res.json({
+      message: "Доступ закрыт",
+    });
+  }
+};
