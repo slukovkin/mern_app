@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
-import userRouts from './routes/user_routes.js'
+import userRouts from "./routes/routes.js";
 
 dotenv.config();
 
@@ -11,7 +11,7 @@ const DB = process.env.DB;
 const server = express();
 server.use(express.json());
 
-server.use('/api', userRouts)
+server.use("/", userRouts);
 
 async function start() {
   try {
@@ -24,4 +24,4 @@ async function start() {
   }
 }
 
-start()
+start();
