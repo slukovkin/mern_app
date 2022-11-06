@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 function Register() {
   return (
     <Form className='container col-4 mt-5'>
-      <h3 className='text-center mb-2'>Регистрация пользователя</h3>
+      <h3 className='text-center mb-3'>Регистрация пользователя</h3>
       <Form.Group className='mb-3' controlId='formBasicEmail'>
         <Form.Control
           type='email'
