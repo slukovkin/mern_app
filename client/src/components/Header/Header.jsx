@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
-
+  const linkState = ({ isActive }) =>
+    isActive ? "nav-link px-2 text-secondary" : "nav-link px-2 text-white";
 
   return (
     <header className='p-3 text-bg-dark'>
@@ -10,59 +11,27 @@ function Header() {
         <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
           <ul className='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
             <li>
-              <NavLink to='/' className={({ isActive }) =>
-                  isActive
-                    ? "nav-link px-2 text-secondary"
-                    : "nav-link px-2 text-white"
-                }>
+              <NavLink to='/' className={linkState}>
                 Главная
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to='/news'
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link px-2 text-secondary"
-                    : "nav-link px-2 text-white"
-                }
-              >
+              <NavLink to='/news' className={linkState}>
                 Новости
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to='/posts'
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link px-2 text-secondary"
-                    : "nav-link px-2 text-white"
-                }
-              >
+              <NavLink to='/posts' className={linkState}>
                 Объявления
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to='/warn'
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link px-2 text-secondary"
-                    : "nav-link px-2 text-white"
-                }
-              >
+              <NavLink to='/warn' className={linkState}>
                 Важное
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to='/contacts'
-                className={({ isActive }) =>
-                  isActive
-                    ? "nav-link px-2 text-secondary"
-                    : "nav-link px-2 text-white"
-                }
-              >
+              <NavLink to='/contacts' className={linkState}>
                 Контакты
               </NavLink>
             </li>
